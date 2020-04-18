@@ -1,0 +1,33 @@
+﻿#footer {
+    background-color: #333;
+    color: #fff;
+}
+
+#footer .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer .footer-container .footer-contact {
+    text-align: center;
+}
+
+#footer .footer-container .footer-contact img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+}
+
+/*#footer .footer-container .footer-contact a{
+    display: block;
+}*/
+
+#footer .footer-container > :last-child {
+        width: 100%;
+}
+
+#footer .footer-container > :last-child p {
+    text-align: center;
+}
