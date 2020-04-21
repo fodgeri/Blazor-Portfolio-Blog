@@ -29,8 +29,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: appleboy/ssh-action@v0.0.2
-    - name: SSH Commands
+    - name: Deploy Web App
+      uses: appleboy/ssh-action@master
       with:
         host: ${{secrets.SSH_HOST}}
         username: ${{secrets.SSH_USER}}
