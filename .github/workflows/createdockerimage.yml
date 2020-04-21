@@ -26,4 +26,14 @@ jobs:
         docker build . --file BlazorPortfolioBlog/Server/Dockerfile --tag $DOCKER_SERVER/blazorportfolioblog:latest
         echo 'Pushing the image'
         docker push $DOCKER_SERVER/blazorportfolioblog:latest
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: appleboy/ssh-action@v0.0.2
+    - name: SSH Commands
+      with:
+        host: ${{secrets.SSH_HOST}}
+        username: ${{secrets.SSH_USER}}
+        password: ${{secrets.SSH_PW}}
+        script: cd ${{secrets.SSH_PATH}} && docker-compose down && docker-compose pull && docker-compose up -d
 
