@@ -28,6 +28,7 @@ jobs:
         docker push $DOCKER_SERVER/blazorportfolioblog:latest
   deploy:
     runs-on: ubuntu-latest
+    needs: build
     steps:
     - name: Deploy Web App
       uses: appleboy/ssh-action@master
